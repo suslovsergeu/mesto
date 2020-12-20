@@ -1,0 +1,15 @@
+.profile {
+  margin: 42px 0 0;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+@media screen and (min-width: 768px) {
+  .profile {
+    margin: 38px 0 0;
+    flex-direction: row;
+  }
+}
