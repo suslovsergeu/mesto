@@ -1,0 +1,21 @@
+.elements {
+  margin: 38px auto 0;
+  padding: 0;
+  display: grid;
+  grid-template: repeat(6,1fr) / 1;
+  row-gap: 21px;
+}
+
+@media screen and (min-width: 768px) {
+  .elements {
+    grid-template: repeat(3,1fr) / repeat(2,1fr);
+    gap: 20px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .elements {
+    margin: 52px auto 0;
+    grid-template: repeat(2,1fr) / repeat(3,1fr);
+  }
+}

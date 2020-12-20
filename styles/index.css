@@ -1,6 +1,7 @@
 @import url(../vendor/normalize.css);
 @import url(../styles/fonts.css);
 @import url(../blocks/common/common.css);
+@import url(../blocks/link/link.css);
 
 
 /*Блок header*/
@@ -19,3 +20,14 @@
 @import url(../blocks/profile/__text/profile__text.css);
 @import url(../blocks/profile/__add-button/profile__add-button.css);
 
+/*Блок elements*/
+@import url(../blocks/elements/elements.css);
+@import url(../blocks/elements/__element/elements__element.css);
+@import url(../blocks/elements/__photo/elements__photo.css);
+@import url(../blocks/elements/__description/elements__description.css);
+@import url(../blocks/elements/__name/elements__name.css);
+@import url(../blocks/elements/__like/elements__like.css);
+
+/*Блок Footer*/
+@import url(../blocks/footer/footer.css);
+@import url(../blocks/footer/__text/footer__text.css);
