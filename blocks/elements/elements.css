@@ -6,7 +6,7 @@
   row-gap: 21px;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 550px) {
   .elements {
     grid-template: repeat(3,1fr) / repeat(2,1fr);
     gap: 20px;

@@ -18,11 +18,11 @@
           <div class="profile__info">
             <div class="profile__title">
               <h1 class="profile__name">Жак-Ив Кусто</h1>
-              <div class="link profile__icon"></div>
+              <div class="button profile__icon"></div>
             </div>
             <p class="profile__text">Исследователь океана</p>
           </div>
-          <button class="link profile__add-button">+</button>
+          <button class="button profile__add-button">+</button>
         </section>
 
         <section class="elements">
@@ -30,42 +30,42 @@
             <img class="elements__photo" src="../images/summer_1.jpg" alt="фото">
             <ul class="elements__description">
               <li class="elements__name">Хакасия</li>
-              <li class="link elements__icon"><img class="elements__like" src="../images/like.png" alt="лайк"></li>
+              <li class="button elements__icon"><img class="elements__like" src="../images/like.png" alt="лайк"></li>
             </ul>
           </div>
           <div class="elements__element">
             <img class="elements__photo" src="../images/summer_2.jpg" alt="фото">
             <ul class="elements__description">
               <li class="elements__name">Поволжье</li>
-              <li class="link elements__icon"><img class="elements__like" src="../images/like.png" alt="лайк"></li>
+              <li class="button elements__icon"><img class="elements__like" src="../images/like.png" alt="лайк"></li>
             </ul>
           </div>
           <div class="elements__element">
             <img class="elements__photo" src="../images/autumn_1.jpg" alt="фото">
             <ul class="elements__description">
               <li class="elements__name">Камчатка</li>
-              <li class="link elements__icon"><img class="elements__like" src="../images/like.png" alt="лайк"></li>
+              <li class="button elements__icon"><img class="elements__like" src="../images/like.png" alt="лайк"></li>
             </ul>
           </div>
           <div class="elements__element">
             <img class="elements__photo" src="../images/autumn_2.jpg" alt="фото">
             <ul class="elements__description">
               <li class="elements__name">Забайкалье</li>
-              <li class="link elements__icon"><img class="elements__like" src="../images/like.png" alt="лайк"></li>
+              <li class="button elements__icon"><img class="elements__like" src="../images/like.png" alt="лайк"></li>
             </ul>
           </div>
           <div class="elements__element">
             <img class="elements__photo" src="../images/winter_1.jpg" alt="фото">
             <ul class="elements__description">
               <li class="elements__name">Алтай</li>
-              <li class="link elements__icon"><img class="elements__like" src="../images/like.png" alt="лайк"></li>
+              <li class="button elements__icon"><img class="elements__like" src="../images/like.png" alt="лайк"></li>
             </ul>
           </div>
           <div class="elements__element">
             <img class="elements__photo" src="../images/winter_2.jpg" alt="фото">
             <ul class="elements__description">
               <li class="elements__name">Сибирь</li>
-              <li class="link elements__icon"><img class="elements__like" src="../images/like.png" alt="лайк"></li>
+              <li class="button elements__icon"><img class="elements__like" src="../images/like.png" alt="лайк"></li>
             </ul>
           </div>
         </section>
@@ -74,6 +74,16 @@
     <footer class="footer">
       <p class="footer__text">&copy; 2020 Mesto Russia</p>
     </footer>
+
+    <section class="popup">
+        <form class="popup__container">
+          <div class="button popup__close"></div>
+          <h2 class="popup__header">Редактировать профиль</h2>
+          <input class="popup__field popup__field_name" type="text">
+          <input class="popup__field popup__field_description" type="text">
+          <button class="button popup__save" type="submit">Сохранить</button>
+        </form>
+    </section>
 
     <script src="../scripts/script.js"></script>
   </body>
