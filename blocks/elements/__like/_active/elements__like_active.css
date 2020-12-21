@@ -1,8 +1,8 @@
-.elements__like {
+.elements__like_active {
   margin: 0;
   padding: 3px 3px 0 0;
   height: 18px;
   width: 21px;
-  background-image: url(../../../images/like.png);
+  background-image: url(../../../../images/like_active.png);
   background-size: cover;
 }

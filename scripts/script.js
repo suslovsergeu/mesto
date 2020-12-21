@@ -12,29 +12,33 @@ popupProfileName.setAttribute('placeholder',profileName.textContent);
 popupProfileDescription.setAttribute('placeholder',profileDescription.textContent);
 
 function visibility() {
-  if (popup.style.display === 'none') {
-    popup.style.display = 'flex';
-  } else {
-    popup.style.display = 'none';
-  }
-}
-function handleFormSubmit (evt) {
-    evt.preventDefault();
-    profileName.textContent = popupProfileName.value;
-    profileDescription.textContent = popupProfileDescription.value;
-    visibility();
+  popup.classList.toggle('popup__opened');
 }
 
+function handleFormSubmit (evt) {
+  evt.preventDefault();
+  profileName.textContent = popupProfileName.value;
+  profileDescription.textContent = popupProfileDescription.value;
+  visibility();
+}
+
+  for (i=0; i < elementLike.length; i++) {
+    elementLike[i].addEventListener('click', function() {
+      this.classList.toggle('elements__like_active');
+    })
+  }
+
 profileEdit.addEventListener('click',visibility);
+
 close.addEventListener('click',visibility);
+
 popup.addEventListener('click', (event) => {
   if (event.target === event.currentTarget) {
     visibility();
   }
 })
+
 formElement.addEventListener('submit', handleFormSubmit);
 
-elementLike.addEventListener('click', () => {
 
-})
 
