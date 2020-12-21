@@ -13,4 +13,4 @@
  - Отправка данных на сервер
 
  # Ссылка на проект
- -
+ https://suslovsergeu.github.io/mesto/pages/index.html
