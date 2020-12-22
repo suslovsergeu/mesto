@@ -3,6 +3,8 @@
   padding: 3px 3px 0 0;
   height: 18px;
   width: 21px;
-  background-image: url(../../../../images/like_active.png);
+  background-image: url(../../../../images/like_active_icon.svg);
   background-size: cover;
+  border: none;
+  background-color: transparent;
 }

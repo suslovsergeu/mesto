@@ -8,10 +8,9 @@ let popupProfileDescription = popup.querySelector('.popup__field_description');
 let formElement = popup.querySelector('.popup__container');
 let elementLike = document.querySelectorAll('.elements__like');
 
-popupProfileName.setAttribute('placeholder',profileName.textContent);
-popupProfileDescription.setAttribute('placeholder',profileDescription.textContent);
-
 function visibility() {
+  popupProfileName.setAttribute('placeholder',profileName.textContent);
+  popupProfileDescription.setAttribute('placeholder',profileDescription.textContent);
   popup.classList.toggle('popup__opened');
 }
 

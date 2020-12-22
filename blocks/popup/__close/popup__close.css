@@ -9,6 +9,8 @@
   position: absolute;
   top: -53px;
   right: -1px;
+  border: none;
+  background-color: transparent;
 }
 
 @media screen and (min-width: 1024px) {
