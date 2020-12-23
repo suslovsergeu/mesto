@@ -8,17 +8,21 @@ let popupProfileDescription = popup.querySelector('.popup__field_description');
 let formElement = popup.querySelector('.popup__container');
 let elementLike = document.querySelectorAll('.elements__like');
 
-function visibility() {
-  popupProfileName.setAttribute('placeholder',profileName.textContent);
-  popupProfileDescription.setAttribute('placeholder',profileDescription.textContent);
-  popup.classList.toggle('popup__opened');
+function popupOpen() {
+  popupProfileName.setAttribute('value',profileName.textContent);
+  popupProfileDescription.setAttribute('value',profileDescription.textContent);
+  popup.classList.add('popup_opened');
+}
+
+function popupClose() {
+  popup.classList.remove('popup_opened');
 }
 
 function handleFormSubmit (evt) {
   evt.preventDefault();
   profileName.textContent = popupProfileName.value;
   profileDescription.textContent = popupProfileDescription.value;
-  visibility();
+  popupClose();
 }
 
   for (i=0; i < elementLike.length; i++) {
@@ -27,13 +31,13 @@ function handleFormSubmit (evt) {
     })
   }
 
-profileEdit.addEventListener('click',visibility);
+profileEdit.addEventListener('click',popupOpen);
 
-close.addEventListener('click',visibility);
+close.addEventListener('click',popupClose);
 
 popup.addEventListener('click', (event) => {
   if (event.target === event.currentTarget) {
-    visibility();
+    popupClose();
   }
 })
 

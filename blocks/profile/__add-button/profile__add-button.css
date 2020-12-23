@@ -10,16 +10,14 @@
   height: 50px;
   color: white;
   font-size: 30px;
+  display: flex;
 }
 
 @media screen and (min-width: 768px) {
   .profile__add-button {
-    margin: 0;
+    margin: auto 0 auto auto;
     width: 150px;
     height: 50px;
-    position: absolute;
-    right: 0;
-    align-self: center;
     font-size: 40px;
   }
 }
