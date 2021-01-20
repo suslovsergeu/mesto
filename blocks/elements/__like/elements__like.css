@@ -1,12 +1,10 @@
 .elements__like {
   margin: 0;
-  padding: 0;
+  padding: 3px 3px 0 0;
   height: 18px;
   width: 21px;
   background-image: url(../../../images/like_icon.svg);
   background-size: cover;
   border: none;
   background-color: transparent;
-  box-sizing: border-box;
-  background-position: center;
 }
