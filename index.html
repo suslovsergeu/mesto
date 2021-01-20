@@ -26,65 +26,45 @@
           </button>
         </section>
 
-        <section class="elements">
-          <div class="elements__element">
-            <img class="elements__photo" src="images/summer_1.jpg" alt="Хакасия">
-            <div class="elements__description">
-              <h2 class="elements__name">Хакасия</h2>
-              <button class="button elements__like" type="button"></button>
-            </div>
-          </div>
-          <div class="elements__element">
-            <img class="elements__photo" src="images/summer_2.jpg" alt="Поволжье">
-            <div class="elements__description">
-              <h2 class="elements__name">Поволжье</h2>
-              <button class="button elements__like" type="button"></button>
-            </div>
-          </div>
-          <div class="elements__element">
-            <img class="elements__photo" src="images/autumn_1.jpg" alt="Камчатка">
-            <div class="elements__description">
-              <h2 class="elements__name">Камчатка</h2>
-              <button class="button elements__like" type="button"></button>
-            </div>
-          </div>
-          <div class="elements__element">
-            <img class="elements__photo" src="images/autumn_2.jpg" alt="Забайкалье">
-            <div class="elements__description">
-              <h2 class="elements__name">Забайкалье</h2>
-              <button class="button elements__like" type="button"></button>
-            </div>
-          </div>
-          <div class="elements__element">
-            <img class="elements__photo" src="images/winter_1.jpg" alt="Алтай">
-            <div class="elements__description">
-              <h2 class="elements__name">Алтай</h2>
-              <button class="button elements__like" type="button"></button>
-            </div>
-          </div>
-          <div class="elements__element">
-            <img class="elements__photo" src="images/winter_2.jpg" alt="Сибирь">
-            <div class="elements__description">
-              <h2 class="elements__name">Сибирь</h2>
-              <button class="button elements__like" type="button"></button>
-            </div>
-          </div>
-        </section>
+        <section class="elements"></section>
+        <section class="popup"></section>
+        <section class="popup-photo"></section>
+
       </main>
 
     <footer class="footer">
       <p class="footer__text">&copy; 2020 Mesto Russia</p>
     </footer>
 
-    <section class="popup">
-        <form class="popup__container" name="popup-form">
-          <button class="button popup__close" type="button"></button>
-          <h2 class="popup__header">Редактировать профиль</h2>
-          <input class="popup__field popup__field_name" type="text" name="popup-name">
-          <input class="popup__field popup__field_description" type="text" name="popup-description">
-          <button class="button popup__save" type="submit">Сохранить</button>
-        </form>
-    </section>
+    <template class="popup__template">
+      <form class="popup__container" name="popup-form">
+        <button class="button popup__close" type="button"></button>
+        <h2 class="popup__header">Редактировать профиль</h2>
+        <input class="popup__field popup__field_name" type="text" name="popup-name">
+        <input class="popup__field popup__field_description" type="text" name="popup-description">
+        <button class="button popup__save" type="submit">Сохранить</button>
+      </form>
+    </template>
+
+    <template class="elements__template">
+      <div class="elements__element">
+        <img class="button elements__photo" src="images/summer_1.jpg" alt="Хакасия">
+        <div class="elements__description">
+          <h2 class="elements__name">Хакасия</h2>
+          <button class="button elements__like" type="button"></button>
+        </div>
+        <button class="button elements__delete"></button>
+      </div>
+    </template>
+
+    <template class="popup-photo__template">
+      <div class="popup-photo__content">
+        <button class="button popup__close" type="button"></button>
+        <img class="popup-photo__image" src="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg" alt="фото">
+        <h2 class="popup-photo__description">Архыз</h2>
+      </div>
+    </template>
+
     <script src="scripts/script.js"></script>
   </body>
 </html>
