@@ -25,6 +25,7 @@ const initialCards = [
     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
   }
 ];
+
 const profileEdit = document.querySelector('.profile__icon');
 const profileName = document.querySelector('.profile__name');
 const profileDescription = document.querySelector('.profile__text');
