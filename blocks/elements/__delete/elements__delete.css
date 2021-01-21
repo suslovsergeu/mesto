@@ -4,6 +4,7 @@
   background-image: url(../../../images/trash.svg);
   border: none;
   background-color: transparent;
+  background-size: contain;
   box-sizing: border-box;
   background-position: center;
   position: absolute;
