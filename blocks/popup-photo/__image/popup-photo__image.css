@@ -1,3 +1,11 @@
 .popup-photo__image {
   width: 100%;
+  max-width: 75vw;
+  max-height: 75vh;
+}
+
+@media screen and (min-width: 768px) {
+  .popup-photo__image {
+    width: auto;
+  }
 }
