@@ -1,4 +1,5 @@
 .popup-photo__image {
   width: auto;
   max-height: 75vh;
+  max-width: 75vw;
 }

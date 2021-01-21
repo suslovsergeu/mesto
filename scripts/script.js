@@ -1,5 +1,4 @@
 /*Элементы страницы*/
-
 const initialCards = [
   {
     name: 'Архыз',
