@@ -38,12 +38,13 @@ const popupHeader = popup.querySelector('.popup__header');
 const popupFieldName = popup.querySelector('.popup__field_name');
 const popupFieldDescription = popup.querySelector('.popup__field_description');
 const popupSaveButton = popup.querySelector('.popup__save');
-const popupCloseButton = document.querySelectorAll('.popup__closed');
+const popupCloseButton = document.querySelector('.popup__closed');
 
 const popupPhoto = document.querySelector('.popup-photo');
 const popupPhotoContainer = document.querySelector('.popup-photo__container');
 const popupPhotoImage = document.querySelector('.popup-photo__image');
 const popupPhotoDescription = document.querySelector('.popup-photo__description');
+const popupPhotoCloseButton = document.querySelector('.popup-photo__closed');
 
 /*Events*/
 profileEdit.addEventListener('click', popupEdit);
@@ -51,9 +52,8 @@ elementAdding.addEventListener('click', popupAdd);
 
 popup.addEventListener('click', popupCloseSide);
 popupPhoto.addEventListener('click', popupCloseSide);
-for (i = 0; i < popupCloseButton.length; i++) {
-  popupCloseButton[i].addEventListener('click', popupClose);
-}
+popupCloseButton.addEventListener('click', popupClose);
+popupPhotoCloseButton.addEventListener('click', popupClose);
 
 /***Functions***/
 function popupOpen() {

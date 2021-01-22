@@ -1,0 +1,23 @@
+.popup-photo__closed {
+  margin: 0;
+  padding: 0;
+  height: 40px;
+  width: 40px;
+  box-sizing: border-box;
+  background-image: url(../../../images/close_icon.svg);
+  background-size: contain;
+  position: absolute;
+  top: -53px;
+  right: -1px;
+  border: none;
+  background-color: transparent;
+}
+
+@media screen and (min-width: 1024px) {
+  .popup-photo__closed {
+    height: 55px;
+    width: 55px;
+    top: -47px;
+    right: -47px;
+  }
+}
