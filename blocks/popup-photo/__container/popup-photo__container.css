@@ -1,4 +1,4 @@
-.popup-photo__content {
+.popup-photo__container {
   margin: auto;
   padding: 0;
   display: flex;
@@ -9,7 +9,7 @@
 }
 
 @media screen and (min-width: 1024px) {
-  .popup-photo__content {
+  .popup-photo__container {
     margin: auto;
   }
 }

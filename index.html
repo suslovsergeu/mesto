@@ -27,24 +27,30 @@
       </section>
 
       <section class="elements"></section>
-      <section class="popup"></section>
-      <section class="popup-photo"></section>
+
+      <section class="popup">
+        <form class="popup__container" name="popup-form">
+          <button class="button popup__close" type="button"></button>
+          <h2 class="popup__header">Редактировать профиль</h2>
+          <input class="popup__field popup__field_name" type="text" name="popup-name">
+          <input class="popup__field popup__field_description" type="text" name="popup-description">
+          <button class="button popup__save" type="submit">Сохранить</button>
+        </form>
+      </section>
+
+      <section class="popup-photo">
+        <div class="popup-photo__container">
+          <button class="button popup__close" type="button"></button>
+          <img class="popup-photo__image" src="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg" alt="фото">
+          <h2 class="popup-photo__description">Архыз</h2>
+        </div>
+      </section>
 
     </main>
 
     <footer class="footer">
       <p class="footer__text">&copy; 2020 Mesto Russia</p>
     </footer>
-
-    <template class="popup__template">
-      <form class="popup__container" name="popup-form">
-        <button class="button popup__close" type="button"></button>
-        <h2 class="popup__header">Редактировать профиль</h2>
-        <input class="popup__field popup__field_name" type="text" name="popup-name">
-        <input class="popup__field popup__field_description" type="text" name="popup-description">
-        <button class="button popup__save" type="submit">Сохранить</button>
-      </form>
-    </template>
 
     <template class="elements__template">
       <div class="elements__element">
@@ -54,14 +60,6 @@
           <button class="button elements__like" type="button"></button>
         </div>
         <button class="button elements__delete"></button>
-      </div>
-    </template>
-
-    <template class="popup-photo__template">
-      <div class="popup-photo__content">
-        <button class="button popup__close" type="button"></button>
-        <img class="popup-photo__image" src="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg" alt="фото">
-        <h2 class="popup-photo__description">Архыз</h2>
       </div>
     </template>
 
