@@ -1,4 +1,4 @@
-.popup_closed {
+.popup__closed {
   margin: 0;
   padding: 0;
   height: 40px;
@@ -14,7 +14,7 @@
 }
 
 @media screen and (min-width: 1024px) {
-  .popup_closed {
+  .popup__closed {
     height: 55px;
     width: 55px;
     top: -47px;
