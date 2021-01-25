@@ -32,13 +32,17 @@ const elementAdding = document.querySelector('.profile__add-button');
 const elements = document.querySelector('.elements');
 const elementTemplate = document.querySelector('.elements__template').content;
 
-const popup = document.querySelector('.popup');
-const popupContainer = popup.querySelector('.popup__container');
-const popupHeader = popup.querySelector('.popup__header');
-const popupFieldName = popup.querySelector('.popup__field_name');
-const popupFieldDescription = popup.querySelector('.popup__field_description');
-const popupSaveButton = popup.querySelector('.popup__save');
-const popupCloseButton = document.querySelector('.popup__closed');
+const popupEdit = document.querySelector('.popup_edit');
+const popupFieldNameEdit = popupEdit.querySelector('.popup__field_name-edit');
+const popupFieldDescriptionEdit = popupEdit.querySelector('.popup__field_description-edit');
+const popupSaveButtonEdit = popupEdit.querySelector('.popup__save_edit');
+
+const popupAdd = document.querySelector('.popup_add');
+const popupFieldNameAdd = popupAdd.querySelector('.popup__field_name-add');
+const popupFieldDescriptionAdd = popupAdd.querySelector('.popup__field_description-add');
+const popupSaveButtonAdd = popupAdd.querySelector('.popup__save_add');
+
+const popupCloseButton = document.querySelectorAll('.popup__closed');
 
 const popupPhoto = document.querySelector('.popup-photo');
 const popupPhotoContainer = document.querySelector('.popup-photo__container');
@@ -47,24 +51,34 @@ const popupPhotoDescription = document.querySelector('.popup-photo__description'
 const popupPhotoCloseButton = document.querySelector('.popup-photo__closed');
 
 /*Events*/
-profileEdit.addEventListener('click', popupEdit);
-elementAdding.addEventListener('click', popupAdd);
+profileEdit.addEventListener('click', popupEditFunction);
+elementAdding.addEventListener('click', popupAddFunction);
 
-popup.addEventListener('click', popupCloseSide);
+popupEdit.addEventListener('click', popupCloseSide);
+popupAdd.addEventListener('click', popupCloseSide);
 popupPhoto.addEventListener('click', popupCloseSide);
-popupCloseButton.addEventListener('click', popupClose);
+
+for (i = 0; i < popupCloseButton.length; i++) {
+  popupCloseButton[i].addEventListener('click', popupClose);
+}
 popupPhotoCloseButton.addEventListener('click', popupClose);
 
 /***Functions***/
-function popupOpen() {
-  popup.classList.add('popup_opened');
+function popupEditOpen() {
+  popupEdit.classList.add('popup_opened');
+}
+
+function popupAddOpen() {
+  popupAdd.classList.add('popup_opened');
 }
 
 function popupClose(handler) {
-  popup.classList.remove('popup_opened');
+  popupEdit.classList.remove('popup_opened');
+  popupAdd.classList.remove('popup_opened');
   popupPhoto.classList.remove('popup-photo_opened');
-  popupSaveButton.removeEventListener('click', handler);
-}
+  popupSaveButtonEdit.removeEventListener('click', handler);
+  popupSaveButtonAdd.removeEventListener('click', handler);
+};
 
 function popupCloseSide(event) {
   if (event.target === event.currentTarget) {
@@ -72,16 +86,11 @@ function popupCloseSide(event) {
   };
 }
 
-function clearFields() {
-  popupFieldName.value = '';
-  popupFieldDescription.value = '';
-}
-
 function addContent(evt) {
   evt.preventDefault();
   const obj = {
-    name: popupFieldName.value,
-    link: popupFieldDescription.value
+    name: popupFieldNameAdd.value,
+    link: popupFieldDescriptionAdd.value
   };
   addCard(obj);
   popupClose(addContent);
@@ -89,29 +98,21 @@ function addContent(evt) {
 
 function editContent(evt) {
   evt.preventDefault();
-  profileName.textContent = popupFieldName.value;
-  profileDescription.textContent = popupFieldDescription.value;
+  profileName.textContent = popupFieldNameEdit.value;
+  profileDescription.textContent = popupFieldDescriptionEdit.value;
   popupClose(editContent);
 }
 
-function popupEdit() {
-  clearFields();
-  popupHeader.textContent = 'Редактировать профиль';
-  popupFieldName.value = profileName.textContent;
-  popupFieldDescription.value = profileDescription.textContent;
-  popupSaveButton.textContent = 'Сохранить';
-  popupSaveButton.addEventListener('click', editContent);
-  popupOpen();
+function popupEditFunction() {
+  popupFieldNameEdit.value = profileName.textContent;
+  popupFieldDescriptionEdit.value = profileDescription.textContent;
+  popupSaveButtonEdit.addEventListener('click', editContent);
+  popupEditOpen();
 }
 
-function popupAdd() {
-  clearFields();
-  popupHeader.textContent = 'Новое место';
-  popupFieldName.placeholder = 'Название';
-  popupFieldDescription.placeholder = 'Ссылка на картинку';
-  popupSaveButton.textContent = 'Создать';
-  popupSaveButton.addEventListener('click', addContent);
-  popupOpen();
+function popupAddFunction() {
+  popupSaveButtonAdd.addEventListener('click', addContent);
+  popupAddOpen();
 }
 
 function addCard(item) {

@@ -28,13 +28,23 @@
 
       <section class="elements"></section>
 
-      <section class="popup">
-        <form class="popup__container" name="popup-form">
-          <button class="button popup__closed" type="button"></button>
-          <h2 class="popup__header">Редактировать профиль</h2>
-          <input class="popup__field popup__field_name" type="text" name="popup-name">
-          <input class="popup__field popup__field_description" type="text" name="popup-description">
-          <button class="button popup__save" type="submit">Сохранить</button>
+      <section class="popup popup_edit">
+        <form class="popup__container popup__container_edit" name="popup-form">
+          <button class="button popup__closed popup__closed_edit" type="button"></button>
+          <h2 class="popup__header popup__header_edit">Редактировать профиль</h2>
+          <input class="popup__field popup__field_name-edit" type="text" name="popup-name">
+          <input class="popup__field popup__field_description-edit" type="text" name="popup-description">
+          <button class="button popup__save popup__save_edit" type="submit">Сохранить</button>
+        </form>
+      </section>
+
+      <section class="popup popup_add">
+        <form class="popup__container popup__container_add" name="popup-form">
+          <button class="button popup__closed popup__closed_add" type="button"></button>
+          <h2 class="popup__header popup__header_add">Новое место</h2>
+          <input class="popup__field popup__field_name-add" type="text" name="popup-name" placeholder="Название">
+          <input class="popup__field popup__field_description-add" type="text" name="popup-description" placeholder="Ссылка на картинку">
+          <button class="button popup__save popup__save_add" type="submit">Создать</button>
         </form>
       </section>
 
