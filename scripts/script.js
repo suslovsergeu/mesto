@@ -46,7 +46,7 @@ const popups = document.querySelectorAll('.popup');
 const popupCloseButtons = document.querySelectorAll('.popup__closed');
 const popupSaveButtons = document.querySelectorAll('.popup__save');
 
-const popupPhoto = document.querySelector('.popup_photo');
+const popupPhoto = document.querySelector('.popup-photo');
 const popupPhotoImage = document.querySelector('.popup-photo__image');
 const popupPhotoDescription = document.querySelector('.popup-photo__description');
 
