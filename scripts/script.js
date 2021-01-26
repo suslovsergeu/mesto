@@ -42,48 +42,65 @@ const popupFieldNameAdd = popupAdd.querySelector('.popup__field_name-add');
 const popupFieldDescriptionAdd = popupAdd.querySelector('.popup__field_description-add');
 const popupSaveButtonAdd = popupAdd.querySelector('.popup__save_add');
 
-const popupCloseButton = document.querySelectorAll('.popup__closed');
+const popups = document.querySelectorAll('.popup');
+const popupCloseButtons = document.querySelectorAll('.popup__closed');
+const popupSaveButtons = document.querySelectorAll('.popup__save');
 
-const popupPhoto = document.querySelector('.popup-photo');
-const popupPhotoContainer = document.querySelector('.popup-photo__container');
+const popupPhoto = document.querySelector('.popup_photo');
 const popupPhotoImage = document.querySelector('.popup-photo__image');
 const popupPhotoDescription = document.querySelector('.popup-photo__description');
-const popupPhotoCloseButton = document.querySelector('.popup-photo__closed');
 
 /*Events*/
 profileEdit.addEventListener('click', popupEditFunction);
 elementAdding.addEventListener('click', popupAddFunction);
 
-popupEdit.addEventListener('click', popupCloseSide);
-popupAdd.addEventListener('click', popupCloseSide);
-popupPhoto.addEventListener('click', popupCloseSide);
+popupSaveButtonEdit.addEventListener('click', editContent);
+popupSaveButtonAdd.addEventListener('click', addContent);
 
-for (i = 0; i < popupCloseButton.length; i++) {
-  popupCloseButton[i].addEventListener('click', popupClose);
-}
-popupPhotoCloseButton.addEventListener('click', popupClose);
+popupCloseButtons.forEach((button) => {
+  button.addEventListener('click', popupClose);
+});
+
+popups.forEach((popup) => {
+  popup.addEventListener('click', popupCloseSide);
+});
 
 /***Functions***/
-function popupEditOpen() {
-  popupEdit.classList.add('popup_opened');
+function openModal(popup) {
+  popup.classList.add('popup_opened');
 }
 
-function popupAddOpen() {
-  popupAdd.classList.add('popup_opened');
+function closeModal(popup) {
+  popup.classList.remove('popup_opened');
 }
 
-function popupClose(handler) {
-  popupEdit.classList.remove('popup_opened');
-  popupAdd.classList.remove('popup_opened');
-  popupPhoto.classList.remove('popup-photo_opened');
-  popupSaveButtonEdit.removeEventListener('click', handler);
-  popupSaveButtonAdd.removeEventListener('click', handler);
+function popupClose() {
+  popups.forEach((popup) => {
+    closeModal(popup);
+  });
 };
 
 function popupCloseSide(event) {
   if (event.target === event.currentTarget) {
     popupClose();
   };
+}
+
+function popupEditFunction() {
+  popupFieldNameEdit.value = profileName.textContent;
+  popupFieldDescriptionEdit.value = profileDescription.textContent;
+  openModal(popupEdit);
+}
+
+function editContent(evt) {
+  evt.preventDefault();
+  profileName.textContent = popupFieldNameEdit.value;
+  profileDescription.textContent = popupFieldDescriptionEdit.value;
+  popupClose();
+}
+
+function popupAddFunction() {
+  openModal(popupAdd);
 }
 
 function addContent(evt) {
@@ -93,26 +110,9 @@ function addContent(evt) {
     link: popupFieldDescriptionAdd.value
   };
   addCard(obj);
-  popupClose(addContent);
-}
-
-function editContent(evt) {
-  evt.preventDefault();
-  profileName.textContent = popupFieldNameEdit.value;
-  profileDescription.textContent = popupFieldDescriptionEdit.value;
-  popupClose(editContent);
-}
-
-function popupEditFunction() {
-  popupFieldNameEdit.value = profileName.textContent;
-  popupFieldDescriptionEdit.value = profileDescription.textContent;
-  popupSaveButtonEdit.addEventListener('click', editContent);
-  popupEditOpen();
-}
-
-function popupAddFunction() {
-  popupSaveButtonAdd.addEventListener('click', addContent);
-  popupAddOpen();
+  popupClose();
+  popupFieldNameAdd.value = '';
+  popupFieldDescriptionAdd.value = '';
 }
 
 function addCard(item) {
@@ -128,7 +128,7 @@ function addCard(item) {
   itemImage.addEventListener('click', () => {
     popupPhotoImage.setAttribute('src', item.link);
     popupPhotoDescription.textContent = item.name;
-    popupPhoto.classList.add('popup-photo_opened');
+    openModal(popupPhoto);
   });
 }
 
