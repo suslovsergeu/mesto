@@ -33,13 +33,13 @@ const elements = document.querySelector('.elements');
 const elementTemplate = document.querySelector('.elements__template').content;
 
 const popupEdit = document.querySelector('.popup_edit');
-const popupFieldNameEdit = popupEdit.querySelector('.popup__field_name-edit');
-const popupFieldDescriptionEdit = popupEdit.querySelector('.popup__field_description-edit');
+const popupFieldNameEdit = popupEdit.querySelector('.popup__field_name-input-edit');
+const popupFieldDescriptionEdit = popupEdit.querySelector('.popup__field_description-input-edit');
 const popupSaveButtonEdit = popupEdit.querySelector('.popup__save_edit');
 
 const popupAdd = document.querySelector('.popup_add');
-const popupFieldNameAdd = popupAdd.querySelector('.popup__field_name-add');
-const popupFieldDescriptionAdd = popupAdd.querySelector('.popup__field_description-add');
+const popupFieldNameAdd = popupAdd.querySelector('.popup__field_name-input-add');
+const popupFieldDescriptionAdd = popupAdd.querySelector('.popup__field_description-input-add');
 const popupSaveButtonAdd = popupAdd.querySelector('.popup__save_add');
 
 const popups = document.querySelectorAll('.popup');
@@ -68,10 +68,19 @@ popups.forEach((popup) => {
 /***Functions***/
 function openModal(popup) {
   popup.classList.add('popup_opened');
+  enableValidation();
 }
 
 function closeModal(popup) {
   popup.classList.remove('popup_opened');
+  const popupFields = popup.querySelectorAll('.popup__field');
+  const popupErrors = popup.querySelectorAll('.popup-error');
+  popupFields.forEach((item) => {
+    item.value='';
+  });
+  popupErrors.forEach((item) => {
+    item.classList.remove('popup-error_visible');
+  });
 }
 
 function popupClose() {
@@ -84,7 +93,14 @@ function popupCloseSide(event) {
   if (event.target === event.currentTarget) {
     popupClose();
   };
-}
+};
+
+document.addEventListener('keyup', (evt) => {
+  evt.preventDefault();
+  if(evt.key === "Escape") {
+    popupClose();
+  };
+});
 
 function popupEditFunction() {
   popupFieldNameEdit.value = profileName.textContent;

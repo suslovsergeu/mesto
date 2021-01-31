@@ -1,0 +1,10 @@
+.popup-error {
+  margin-top: 5px;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 1.2;
+  color: red;
+  display: none;
+}

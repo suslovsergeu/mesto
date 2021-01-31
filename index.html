@@ -29,21 +29,31 @@
       <section class="elements"></section>
 
       <section class="popup popup_edit">
-        <form class="popup__container popup__container_edit" name="popup-form">
+        <form class="form popup__container popup__container_edit" name="popup-form" novalidate>
           <button class="button popup__closed popup__closed_edit" type="button"></button>
           <h2 class="popup__header popup__header_edit">Редактировать профиль</h2>
-          <input class="popup__field popup__field_name-edit" type="text" name="popup-name">
-          <input class="popup__field popup__field_description-edit" type="text" name="popup-description">
+
+          <input class="popup__field popup__field_name-input-edit" type="text" name="popup-name" id="name-input-edit" required minlength="2" maxlength="40">
+          <span class="popup-error name-input-edit-error"></span>
+
+          <input class="popup__field popup__field_description-input-edit" type="text" name="popup-description" id="description-input-edit" required minlength="2" maxlength="200">
+          <span class="popup-error description-input-edit-error"></span>
+
           <button class="button popup__save popup__save_edit" type="submit">Сохранить</button>
         </form>
       </section>
 
       <section class="popup popup_add">
-        <form class="popup__container popup__container_add" name="popup-form">
+        <form class="form popup__container popup__container_add" name="popup-form" novalidate>
           <button class="button popup__closed popup__closed_add" type="button"></button>
           <h2 class="popup__header popup__header_add">Новое место</h2>
-          <input class="popup__field popup__field_name-add" type="text" name="popup-name" placeholder="Название">
-          <input class="popup__field popup__field_description-add" type="text" name="popup-description" placeholder="Ссылка на картинку">
+
+          <input class="popup__field popup__field_name-input-add" type="text" name="popup-name" placeholder="Название" id="name-input-add" required minlength="2" maxlength="30">
+          <span class="popup-error name-input-add-error"></span>
+
+          <input class="popup__field popup__field_description-input-add" type="url" name="popup-description" placeholder="Ссылка на картинку" id="description-input-add" required>
+          <span class="popup-error description-input-add-error"></span>
+
           <button class="button popup__save popup__save_add" type="submit">Создать</button>
         </form>
       </section>
@@ -74,5 +84,6 @@
     </template>
 
     <script src="scripts/script.js"></script>
+    <script src="scripts/validate.js"></script>
   </body>
 </html>

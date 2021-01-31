@@ -1,0 +1,14 @@
+.popup__save_disabled {
+  background-color: #FFFFFF;
+  color: black;
+  opacity: 0.2;
+  border: 1px solid black;
+}
+
+.popup__save_disabled:hover {
+  opacity: 0.2;
+  cursor: auto;
+}
+.popup__save_disabled:focus {
+  outline: 0;
+}
