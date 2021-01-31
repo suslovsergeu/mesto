@@ -77,6 +77,7 @@ function closeModal(popup) {
   const popupErrors = popup.querySelectorAll('.popup-error');
   popupFields.forEach((item) => {
     item.value='';
+    item.classList.remove('popup__field_error')
   });
   popupErrors.forEach((item) => {
     item.classList.remove('popup-error_visible');

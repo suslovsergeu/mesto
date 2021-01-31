@@ -16,12 +16,14 @@ const toggleButtonState = (inputList, buttonElement) => {
 
 const showInputError = (formElement, inputElement, errorMessage) => {
   const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
+  inputElement.classList.add('popup__field_error');
   errorElement.textContent = errorMessage;
   errorElement.classList.add('popup-error_visible');
 };
 
 const hideInputError = (formElement, inputElement) => {
   const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
+  inputElement.classList.remove('popup__field_error');
   errorElement.classList.remove('popup-error_visible');
   errorElement.textContent = '';
 };

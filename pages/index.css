@@ -45,6 +45,7 @@
 @import url(../blocks/popup-error/popup-error.css);
 @import url(../blocks/popup-error/_visible/popup-error_visible.css);
 @import url(../blocks/popup/__save/_disabled/popup__save_disabled.css);
+@import url(../blocks/popup/__field/_error/popup__field_error.css);
 
 /*Блок popup-photo*/
 @import url(../blocks/popup-photo/popup-photo.css);
